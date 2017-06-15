@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MDS.Shape">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAAAA=</HashCode>
+      <FileName>Articles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.PointArt">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAEAAAAAACCAAABogAAAaAA=</HashCode>
+      <FileName>Articles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.Data">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EMAAAAAAAAAAAAAAAoEAAAAAAQAAIAAAAAAAABAAAAA=</HashCode>
+      <FileName>Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.MainForm" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUGiEiVgsCAhAgMABQuBICAiGAAEAIACsPCcAoGRJyg=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.LandmarkMDS">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAIAAgACAAAEAAAAgAAAACAEAAAAgGAAjAAAAAABA=</HashCode>
+      <FileName>LandmarkMDS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.MDS">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAIAAAAAQ=</HashCode>
+      <FileName>MDS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.Program">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.SMACOF">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAIAAgACAAAEAAAAgAAAACAEAAAAgGAAjAAAAAABA=</HashCode>
+      <FileName>SMACOF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.MDSabstract">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>MDSabstract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MDS.Class1">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="MDS.Articles">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQBAAAACAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Articles.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
