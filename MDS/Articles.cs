@@ -22,11 +22,11 @@ namespace MDS
         }
         public int GetMainCategory()
         {
-            return Cat.IndexOf(Cat.Max());
+            return cat.IndexOf(Cat.Max());
         }
         public double GetMainVal()
         {
-            return Cat.Max();
+            return cat.Max();
         }
         public List<double> Cat
         {

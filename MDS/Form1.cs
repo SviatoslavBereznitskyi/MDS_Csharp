@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MDS
 {
@@ -134,10 +129,28 @@ namespace MDS
         {
 
             pointsAtr = new List<PointArt>();
-            for (int i = 0; i < output.GetLength(1); i++)
+            double maxPercentToCategory = 50;
+            try
             {
-                pointsAtr.Add(new PointArt(output[0, i], output[1, i], art[i]));
+                maxPercentToCategory = Convert.ToDouble(maxPercentTb.Text);
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("невірний формат вводу");
+                maxPercentToCategory = 50;
+            }
+            while (pointsAtr.Count < 1)
+            {
+                for (int i = 0; i < output.GetLength(1); i++)
+                {
+                    if (art[i].GetMainVal() < maxPercentToCategory)
+                    {
+                        pointsAtr.Add(new PointArt(output[0, i], output[1, i], art[i]));
+                    }
+                }
+                maxPercentToCategory += 5;
+            }
+            
 
             foreach (var item in pointsAtr)
             {
@@ -504,6 +517,7 @@ namespace MDS
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+          
             StreamReader myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             //List<Articles> tempList = new List<Articles>();
@@ -559,8 +573,7 @@ namespace MDS
             countWord = ListWei.Count;
             ResultL = new List<Line>();
             foreach (var item in ListWei)
-            {
-               
+            {             
                 double temp1 = 0;
                 for (int i = 0; i < item.GetLength(0); i++)
                 {
@@ -568,14 +581,10 @@ namespace MDS
                     for (int j = 0; j < item.GetLength(1); j++)
                     {
                         temp += item[i, j];
-                    }
-                    if (temp>temp1)
-                    {
-                        mainCat = i;
-                        temp1 = temp;
-                    }
-                   
+                    }                    
+                        temp1 += temp;                                  
                 }
+                chart2.Series.Last().Points.Add(temp1);
                 double tempSC;
                 int start=0;
                 if (mainCat != 0)
@@ -605,6 +614,13 @@ namespace MDS
                 chart1.Series[0].Points.Last().Label = categoryName[i];
             }
             textBox1.Text = (11-iter).ToString();
+            System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series();
+            series.ChartArea = "ChartArea1";
+            series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series.Color = Color.FromArgb(200,10,10);
+            series.MarkerBorderColor = Color.Transparent;
+           // series.YValuesPerPoint = 6;
+            chart2.Series.Add(series);
         }
         int iter = 1;
         int countWord=1;
