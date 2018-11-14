@@ -365,18 +365,28 @@ namespace MDS
             // isAddCat = !isAddCat;
 
         }
-
+        private int category_id;
         public void InitLines(MouseEventArgs e)
         {
-
-            List<int> res = new List<int>();
-            List<Line> temp = new List<Line>();            
+                        List<int> res = new List<int>();
+            List<Line> temp = new List<Line>();
+            string[] tempArr = new string[chartLinear.Series.Last().Points.Count];
+            if (dataGridView1.Columns.Count < chartLinear.Series.Last().Points.Count)
+            {
+                for (int i = 0; i < chartLinear.Series.Last().Points.Count - dataGridView1.Columns.Count; i++)
+                {
+                    dataGridView1.Columns.Add($"point_{dataGridView1.Columns.Count+i}", $"point_{dataGridView1.Columns.Count+i}");
+                }
+            }
             for (int i = 0; i < chartLinear.Series.Last().Points.Count - 1; i++)
             {
-                temp.Add(new Line(new Point((int)chartLinear.Series.Last().Points[i].XValue, (int)chartLinear.Series.Last().Points[i].YValues[0]), new Point((int)chartLinear.Series.Last().Points[i + 1].XValue, (int)chartLinear.Series.Last().Points[i + 1].YValues[0]), CounterOfCat, chartLinear.ChartAreas[0].AxisX.PixelPositionToValue(e.X), chartLinear.ChartAreas[0].AxisY.PixelPositionToValue(e.Y)));     
+                temp.Add(new Line(new Point((int)chartLinear.Series.Last().Points[i].XValue, (int)chartLinear.Series.Last().Points[i].YValues[0]), new Point((int)chartLinear.Series.Last().Points[i + 1].XValue, (int)chartLinear.Series.Last().Points[i + 1].YValues[0]), CounterOfCat, chartLinear.ChartAreas[0].AxisX.PixelPositionToValue(e.X), chartLinear.ChartAreas[0].AxisY.PixelPositionToValue(e.Y)));
+                
+                tempArr[i] = temp.Last().Coord.ToString();
             }
+            dataGridView1.Rows.Add(tempArr);
             Lines.Add(temp);
-             
+            
         }
         bool isCalc = true;
         int CounterOfCat = 0;
